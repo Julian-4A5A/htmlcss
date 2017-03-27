@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Strings</title>
+        <style type="text/css">
+            .a{
+                border:solid 1px red;
+                width:30%;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>opdracht A</h1>
+    
+       
+        <input id="samen1" name="Naam"></input><br>
+        <br>
+        <input id="samen2" name="Naam"></input><br>
+        <br>
+        <p id="toon"></p>
+        Aantal tekens gebruikt:
+        <div id="lengte"></div>
+        
+        
+        <div class="a">
+            De rol van de <span id="verander">CIO</span> is enorm veranderd in de afgelopen jaren. 
+            Voorheen was de rol van de programmeur namelijk vooral een technische, 
+            eentje die te maken had met hardware en software. Of, minder florissant uitgedrukt, 
+            hij was de persoon die ervoor moest zorgen dat de machines bleven draaien. 
+            Vandaag de dag is dat niet meer het micromanagement waarmee de gemiddelde programmeur bezig is. 
+            In plaats daarvan wordt hij (of zij natuurlijk) steeds vaker gezien als de persoon die ervoor moet zorgen
+            dat ICT-gerelateerde zaken worden afgestemd op bedrijfsdoelstellingen,
+            en die innovatie binnen de organisatie moet stimuleren.
+        </div>
+         
+        <div id="mooi"></div>
+        
+        <button onclick="samen3()">Opdracht done!!!</button>
+    </body>
+    <script type="text/javascript">
+    function samen3() {  
+    var string1 = document.getElementById("samen1").value +(" ");
+    var string2 = document.getElementById("samen2").value;
+    var totaal = string1.concat(string2)
+    var lengte = totaal.length; 
+    var str = document.getElementById("verander").innerHTML; 
+    var res = str.replace("CIO", "programeur");
+    document.getElementById("verander").innerHTML = res;
+    
+       document.getElementById("toon").innerHTML = totaal;
+       document.getElementById("lengte").innerHTML = lengte;
+    var str2 = "Mooi gedaan heb ik het he dat is wel een goed waard";
+    var resa = str2.toUpperCase();
+    document.getElementById("mooi").innerHTML = resa;
+       
+    }   
+        
+        
+    </script>
+</html>

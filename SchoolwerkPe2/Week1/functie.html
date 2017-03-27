@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style type="text/css">
+   
+</style>
+  
+</title>
+</head>
+<body>
+    
+        cijfer 1:<br>
+        <input type="text" size="15" name="p1" id="p1"><br>
+        cijfer 2<br>
+        <input type="text" size="15" name="p2" id="p2"><br>
+        cijfer 3:<br>
+        <input type="text" size="15" name="p3" id="p3"><br>
+        het aantal cijfers:<br>
+        <input type="text" size="15" name="p4" id="p4"><br>
+    <div class="een">
+        
+        </div>
+    <div id="GEM">
+       
+        
+    </div>
+    <button onclick="uitkomst()">bereken</button>
+ <script type="text/javascript">
+    
+ var p1= 8;
+ var p2= 9;
+ var p3= 5.5;
+ var p4= 3;
+ 
+
+ 
+ 
+ 
+    function uitkomst() {
+         	p1 = parseFloat(document.getElementById("p1").value);
+         	p2 = parseFloat(document.getElementById("p2").value);
+         	p3 = parseFloat(document.getElementById("p3").value);
+         	p4 = parseFloat(document.getElementById("p4").value);
+         	if (isNaN(p1)) p1 = 8;
+         	if (isNaN(p2)) p2 = 9; 
+         	if (isNaN(p3)) p3 = 5.5; 
+         	if (isNaN(p4)) p4 = 3; 
+         	
+         	waarde = ((p1+p2+p3)/p4)
+    
+document.getElementById("GEM").innerHTML =waarde;
+ 
+}
+</script>
+</body>
+</html>
+
+
+
+ 

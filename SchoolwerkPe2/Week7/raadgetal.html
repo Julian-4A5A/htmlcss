@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 7.1 - Maandag</title>
+    </head>
+    <body>
+       
+        
+        <FORM onSubmit="" NAME="guessquiz">
+
+
+
+
+
+
+<INPUT TYPE="text" NAME="prompt" SIZE="31" MAXLENGTH="40" VALUE="Klik in het vak hieronder!" style="text-align: center; background-color: #FFCC00"><BR>
+
+<INPUT TYPE="text" NAME="guess" SIZE="3" MAXLENGTH="4" VALUE="" style="text-align: center">
+
+<INPUT TYPE="button" VALUE="PROBEER" onClick='process(guessme)'>
+
+
+
+        
+        <script>
+            var guessme=Math.round(Math.random()*(99)+1);
+            var speech='Guess my number (from 1 to 100)';
+            var tries = 0;
+            
+            function process(mystery) {
+            var guess=document.forms.guessquiz.guess.value;
+            
+            var speech='"'+guess+ '" is geen getal!';
+            document.forms.guessquiz.guess.value='';
+            tries++;
+            status = "  Number of tries so far: " + tries;
+            
+            if (guess==mystery)
+            {
+            document.forms.guessquiz.prompt.value='Proficiat! '+mystery+' is juist!';
+            alert ('Schitterend! - Het getal is '+mystery+'! \n\nJe hebt het geraden in '+tries+' beurten.\n\nKlik op OK voor een nieuw spel.');
+            speech='';
+            document.location=document.location;
+            }
+            
+            if (mystery<guess)
+            {
+            speech='Kleiner dan '+ guess;
+            }
+            
+            if (mystery>guess)
+            {
+            speech='Groter dan '+ guess;
+            }
+            
+            if (guess=='')
+            {
+            speech='Je vulde niks in!'
+            }
+            
+            if (tries == 10) {
+                window.alert("Helaas, je beurten zijn om. \n\nHet nummer was: " + mystery);
+                location.reload();
+            }
+            
+            document.forms.guessquiz.prompt.value=speech; document.forms.guessquiz.guess.focus();
+            
+            }
+            
+            
+
+        </script>
+    </body>
+</html>

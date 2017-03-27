@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <input type="number" id="input">
+        <button onclick="zoeken()">Je mag drukken!</button>
+        <p id="display"></p>
+        
+        
+        
+        
+        <script>
+            function zoeken(){
+                var getallen = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+                var invoer = document.getElementById("input").value;
+                var text = "";
+                for (var i=0;i<getallen.length;i++) {
+                    if (invoer == getallen[i]) {
+                        text += " het klopt";
+                    }
+                    
+                }
+                
+            
+                document.getElementById("display").innerHTML = text;
+            }
+            
+        </script>
+    </body>
+</html>

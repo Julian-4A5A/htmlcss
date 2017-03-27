@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pas op/Haha</title>
+        <style type="text/css">
+            #display {
+                background-color:yellow;
+                border: solid 1px green;
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        Je kan een keuze maken uit de cijfers 1 t/m 6<br>
+        <input id="code" type="number">
+        
+        <p><button onclick="vragen()">Wat wordt de keuze!!!</button></p>
+        <p id="display"></p>
+        
+        
+        
+        <script type="text/javascript">
+        var vraag1 = "1";
+        var vraag2 = "2";
+        var vraag3 = "3";
+        var vraag4 = "4";
+        var vraag5 = "5";
+        var antwoord1 = "WiFi is uit de lucht";
+        var antwoord2 = "Je bent al ingelogd";
+        var antwoord3 = "Je hebt de laatste update van Java niet geïnstalleerd";
+        var antwoord4 = "Je tegoed is op";
+        var antwoord5 = "Let op, lerares komt eraan";
+        var antwoord = "Klopt hé";
+        
+        function vragen(){
+            var code = document.getElementById("code").value;
+            
+            if (code == "1"){
+            document.getElementById("display").innerHTML = antwoord1;
+            } else if (code == "2") {
+            document.getElementById("display").innerHTML = antwoord2;
+            } else if (code == "3"){
+            document.getElementById("display").innerHTML = antwoord3;
+            } else if (code == "4"){
+            document.getElementById("display").innerHTML = antwoord4;
+            } else if (code == "5"){
+            document.getElementById("display").innerHTML = antwoord5;
+            }
+            else {
+                document.getElementById("display").innerHTML = antwoord;
+            }
+        }
+
+            
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            #groen {
+                border-radius: 250px;
+                background: green;
+                padding: 20px; 
+                width: 100px;
+                height: 100px; 
+            }
+            
+            #oranje {
+                border-radius: 250px;
+                background: orange;
+                padding: 20px; 
+                width: 100px;
+                height: 100px; 
+            }
+            
+            #rood {
+                border-radius: 250px;
+                background: red;
+                padding: 20px; 
+                width: 100px;
+                height: 100px; 
+            }
+        </style>
+        
+    </head>
+    <body>
+        De stoplicht der tijden!!<br>
+        <button id="rood" onclick="stoplicht('rood')"></button>
+        <br>
+        <button id="oranje" onclick="stoplicht('oranje')"></button>
+        <br>
+        <button id="groen" onclick="stoplicht('groen')"></button>
+        <p id="display"></p>
+        
+        
+        <script type="text/javascript">
+    
+            function stoplicht(kleur){
+                if (kleur == "rood") {
+                    document.getElementById("rood").style.backgroundColor = "red";
+                    document.getElementById("oranje").style.backgroundColor = "grey";
+                    document.getElementById("groen").style.backgroundColor = "grey";
+                    document.getElementById("display").innerHTML = "Pas op!! stoppen NU!"
+                } else if(kleur == "oranje"){
+                    document.getElementById("rood").style.backgroundColor = "grey";
+                    document.getElementById("oranje").style.backgroundColor = "orange";
+                    document.getElementById("groen").style.backgroundColor = "grey";
+                    document.getElementById("display").innerHTML = "****ing hard remmen!"
+                } else if(kleur == "groen"){
+                    document.getElementById("rood").style.backgroundColor = "grey";
+                    document.getElementById("oranje").style.backgroundColor = "grey";
+                    document.getElementById("groen").style.backgroundColor = "green";
+                    document.getElementById("display").innerHTML = "Gas op die lolli!"
+                
+                }
+            }
+        </script>
+    </body>
+</html>

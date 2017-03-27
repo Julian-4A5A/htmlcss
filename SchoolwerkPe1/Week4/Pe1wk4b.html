@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<style>
+form
+	{
+    border-width: 1px;
+    border-style: dashed;
+    border-color:#AD4766;
+ 
+    padding: 15px;
+    width: 300px;
+ 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+	}
+
+label
+	{
+    float: left;
+    width: 75px;
+    text-align: right;
+ 
+    margin-right: 15px;
+    }
+ body
+ {
+     background-color:#ADF0B8;
+ }
+input
+	{
+    background-color: yellow;
+ 
+    font-size: x-small;
+ 
+    border-width: 1px;
+    border-style: solid;
+    font-family: verdana;
+    border-color: #cccccc;
+ 
+    margin-bottom: 10px;
+    }
+ 
+textarea
+	{
+    width: 250px;
+    height: 100px;
+    background-color: #f5f5f5;
+ 
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+ 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+ 
+    margin-bottom: 10px;
+    }
+Header
+{
+   font-family: Arial, Helvetica, sans-serif;
+   
+}
+</style>
+<title>
+Formulier
+</title>
+</head>
+<body>
+
+<header>Rijschool Rocket Formulier</header>
+</p><form action="MAILTO:504690@edu.rocmn.nl" method="post" enctype="text/plain">
+
+
+<br>
+<p>E-mail:</p> <p> <input type="email" name="e-adres" size="30"></p>
+<p>Wachtwoord:</p> <p> <input type="password" name="wachtwoord" size="30" maxlength="12"></p>
+<p>Bevestig wachtwoord:</p> <p> <input type="password" name="wachtwoord" size="30" maxlength="12"></p>
+</form>
+
+<form method="post">
+<br>
+<p>Naam:</p> <p> <input type="text" name="jouwnaam" size="30" required></p>
+<input type="radio" name="sex" value="male" checked> Man
+  
+  <input type="radio" name="sex" value="female"> Vrouw
+<p>Adres:</p>  <p><input type="text" name="adres" size="30"></p>
+<p>Postcode:</p> <p><input type="text" name="postcode" size="30" maxlength="6"> </p>
+<p>Woonplaats:</p> <p> <input type="text" name="plaats" size="30"maxlength="15"></p>
+<br>
+
+Theorie gedaan 
+<input type="radio" name="stelling" value="eens" checked="">Ja
+<input type="radio" name="stelling" value="oneens">Nee<br>
+<br>
+Handicappen en/of aandoeningen: 
+<textarea rows="3" cols="30" name="txtar"></textarea><br>
+<br>
+<P>Pakketkeuze:</p> 
+<select name="ukl">
+<option>10 lessen voor &#8364;590</option>
+<option>20 lessen voor &#8364;1150</option>
+<option>30 lessen voor &#8364;1450</option>
+</select> 
+
+<br>
+<p>Eindmgelijkheden:</p>
+<input type="reset" value="Beginwaarden">
+<input type="submit" value="Verzenden gegevens">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+    
+</head>
+<body>
+
+
+
+<p id="demo"></p>
+Game:<br>
+<input type="text" id="Woord"/><br>
+Op welke positie:<br>
+
+<input type="number" id="Plaats"/><br>
+
+enz...<br>
+<button id="een" onclick="sort()">sorteren</button>
+<button id="twee" onclick="toe()">toevoegen</button>
+<script>
+    var game = ["Minecraft", "League of Legends", "Smite", "Heroes of the Storm"];
+    
+    //document.getElementById("demo").innerHTML = game;
+
+function sort() {
+    game.sort();
+    document.getElementById("demo").innerHTML = game;
+}
+function toe(){
+    var woord = document.getElementById("Woord").value;
+    var positie = document.getElementById("Plaats").value;
+    
+    game.splice(positie, 0,woord)
+    document.getElementById("demo").innerHTML = game
+}
+</script>
+
+
+
+</body>
+</html>
+
+

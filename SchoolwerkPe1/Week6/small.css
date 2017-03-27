@@ -1,0 +1,101 @@
+@media only screen and (max-width: 701px) {
+
+
+    body{
+        font-size:80%;
+    }
+    #header{
+        background-color:red;
+        font-size:80%;
+        float:top;
+        height:50px;
+    }
+    #left{
+        background-color:red;
+    }
+    #left ul li{
+        background-color:red;
+        height:50px;
+        display:inline;
+    }
+    #midden{
+        background-color:red;
+        height:50px;
+    }
+    #rechts{
+        background-color:red;
+        height:50px;
+    }
+    #body{
+        width:80%;
+    }
+    #body{
+        border: 1px solid #999;
+        padding: 20px;
+        margin-bottom: 5px auto;
+        background-color:gray;
+    }
+    #body > div{
+        border: 1px solid #999; 
+        padding: 20px; 
+    	margin-bottom: 5px; 
+    	color: black;
+    }
+}
+@media (min-width:701px) and (max-width:900px) {
+    
+    body { 
+    	background: gray; 
+    	font-size:100%;
+    }
+    #body { 
+    	width: 900px; 
+    	position: relative; 
+    }
+    
+    #midden{ 
+    	float: left; 
+    	width: 440px; 
+    	height: 300px; 
+    	margin-left: 218px; 
+    }
+    #left{ 
+    	width: 170px; 
+    	height: 300px; 
+    	position: absolute; 
+    	left: 0; 
+    }
+    #rechts { 
+    	display:none;
+    	
+    }
+}
+@media only screen and (min-width: 901px) and (max-width:1500px) {
+   
+    body  {
+        background-image: url("paper.jpeg");
+    	font-size:100%;
+    }
+    #body { 
+    	width: 900px; 
+    	position: relative; 
+    }
+    
+    #midden{ 
+    	 
+    	width: 440px; 
+    	height: 300px; 
+    	margin-left: 218px; 
+    }
+    #left{ 
+    	width: 170px; 
+    	height: 300px; 
+    	position: absolute; 
+    	
+    }
+    #rechts { 
+    	float:right;
+        width: 150px; 
+    	height: 300px; 
+    }
+}

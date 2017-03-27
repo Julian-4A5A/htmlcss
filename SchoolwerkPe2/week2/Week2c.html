@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p> <span id=getalA>2000</span> + <span id=getalB>14</span> = <span id=resultaat1></span>
+</p>
+<p> <span id=getalC>2010</span> + <span id=getalD>4</span> = <span id=resultaat2>2014</span>
+
+<script>
+var A = 2010;
+
+berekenSom();
+
+function berekenSom() {
+var A = parseFloat(document.getElementById("getalA").innerHTML);
+var B = parseFloat(document.getElementById("getalB").innerHTML);
+    document.getElementById("resultaat1").innerHTML = A + B;
+}
+
+function berekenSom2() {
+
+var B = 4;
+var A = parseFloat(document.getElementById("getalC").innerHTML);
+var B = parseFloat(document.getElementById("getalD").innerHTML);
+    document.getElementById("resultaat2").innerHTML = A + B;
+
+}
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+body { 
+	background: #999; 
+	font-size:100%;
+}
+#body { 
+	width: 900px; 
+	position: relative; 
+}
+
+#midden{ 
+	float: left; 
+	width: 440px; 
+	height: 300px; 
+	margin-left: 218px; 
+}
+#left{ 
+	width: 170px; 
+	height: 300px; 
+	position: absolute; 
+	left: 0; 
+}
+#rechts { 
+	display:none;
+	
+}

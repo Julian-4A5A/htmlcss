@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pe2Wk3a(2) Opdracht</title>
+    </head>
+    
+    
+    <body>
+        <input type="number" id='getal' placeholder="Getal" />
+        
+        <select id="dropdown" onchange='convert()'>
+            <option value="hexadecimaal">Hexadecimaal</option>
+            <option value="octaal">Octaal</option>
+            <option value="binair">Binair</option>
+            <option value="10tallig">10-tallig</option>
+        </select><br><br>
+        
+        <input type="text" id="result" disabled />
+        
+        
+        
+        <script>
+            function convert() {
+                var e = document.getElementById('dropdown');
+                var userInput = e.options[e.selectedIndex].value;
+                var number = Number(document.getElementById('getal').value);
+                var input = document.getElementById('result');
+                
+                switch(userInput) {
+                    case 'hexadecimaal':
+                        var result = number.toString(16);
+                        input.value = result;
+                    break;
+                    case 'octaal':
+                        var result = number.toString(8);
+                        input.value = result;
+                    break;
+                    case 'binair':
+                        var result = number.toString(2);
+                        input.value = result;
+                    break;
+                    case '10tallig':
+                        var result = number.toString(10);
+                        input.value = result;
+                    break;
+                }
+            }
+        </script>
+    </body>
+</html>

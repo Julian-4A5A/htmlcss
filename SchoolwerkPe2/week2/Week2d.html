@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>23 november laatste les
+        </title>
+        <style>
+        div, p2, p3{
+            border:solid 3px red;
+            background-color:black;
+            color:#F7FFF7;
+            margin-bottom:5px;
+        }
+        
+        body{
+            background-color:#F5F5F5;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <div class="datebox"><span onmouseover='getElementById("date").innerHTML=Date()' id="date"><p1>Bekijk nu de Tijd van dit moment!!</span></p>
+        </div><br>
+        <hr>
+        <p2>Dit is een stuk tekst, en als je op de knop drukt, zal <span id="change">de kleur van dit stukje tekst (just fun)</span> veranderen.</p><br>
+            <button onclick="veranderkleur()">Verander de kleur van het stukje tekst!</button>
+        <hr>
+        <p3>Dit is een stukje tekst, waar het volgende gedeeltje zal <span id="change2">veranderen als er een kleur is geselecteerd(more fun hahahah)</span> in het drop down menu.</p3>
+        <br>
+        <select id="verander" onclick="veranderkleur1()">
+            <option value="Selecteer een kleur"></option>
+            <option value="red">Rood</option>
+            <option value="blue">Blauw</option>
+            <option value="green">Groen</option>
+            <option value="yellow">Geel</option>
+        </select>
+        
+        <script type="text/javascript">
+            function veranderkleur() {
+            document.getElementById("change").style.color = "gold";
+        }  
+            
+function veranderkleur1()
+  {
+    var color = document.getElementById("verander").value;
+    document.getElementById("change2").style.color = color;
+  }
+        
+        </script>
+    </body>
+</html>

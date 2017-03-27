@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 7.2 - woensdag</title>
+    </head>
+    <body>
+        <p id="geld"></p><br>
+        <input type="number" id="geld1">Euro's van 1-50</input><br>
+        <button onclick="start()">Go</button><br>
+
+        <button onclick="stop()">Stop</button><br>
+        
+        
+        <script type="text/javascript">
+        var timer
+         var getal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11","12"];
+         var Euros = document.getElementById("geld1").value;
+            function start(){
+                
+                
+                if(Euros >= getal[12]){
+                    timer = setTimeout(toon, 3000);}
+                    else (Euros <= getal[12])
+                      timer = setTimeout(toon, 2400);}
+                    
+            
+            
+            function stop() {
+                clearTimeout(timer);
+                var Euros = Math.floor((Math.random() * 10) + 1);
+                 document.getElementById("geld").innerHTML = Euros;
+}
+            
+            
+            function toon() {
+                document.getElementById("geld").innerHTML = Euros + "2000 eurogewonnen";
+            }
+        </script>
+    </body>
+        
+        
+        
+</html>

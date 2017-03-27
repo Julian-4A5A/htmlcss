@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Interactive HTML</title>
+</head>
+
+<body>
+    <h3></h3>
+    <p id=demo></p>
+    <form name="reken">
+        Getal 1:<br>
+        <input type="text" size="15" name="getal1"><br>
+        Getal 2:<br>
+        <input type="text" size="15" name="getal2"><br><br>
+        
+        <input type=button value="+" id="kop" onclick="Reken('+')">
+        <input type=button value="-" id="kop" onclick="Reken('-')">
+        <input type=button value="x" id="kop" onclick="Reken('x')">
+        <input type=button value="/" id="kop" onclick="Reken('/')"><br><br>
+        
+        Uitkomst:<br>
+        <input type="text" size="15" name="uitkomst"><br><br>
+        
+        <input type=button value="Opnieuw" id="kop" onclick="Schonen()"></form>
+    <script type="text/javascript">
+            function Reken(optie) {
+         	getal1 = parseFloat(document.reken.getal1.value);
+         	getal2 = parseFloat(document.reken.getal2.value);
+         	if (isNaN(getal1)) getal1 = 0;
+         	if (isNaN(getal2)) getal2 = 0;
+        
+         	if (optie == "+") uitkomst = getal1 + getal2;
+         	if (optie == "-") uitkomst = getal1 - getal2;
+         	if (optie == "x") uitkomst = getal1 * getal2;
+         	if (optie == "/") uitkomst = getal1 / getal2;
+         	document.reken.uitkomst.value = uitkomst;
+         	document.reken.getal1.focus();}
+            
+        
+	</script>
+</body>
+</html>

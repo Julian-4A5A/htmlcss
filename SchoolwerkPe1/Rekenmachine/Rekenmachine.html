@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<meta charset=utf-8 />
+<head>
+<style>
+body {
+
+}
+table, tr, td {
+    
+}
+
+td button{ 
+width: 91px;
+height: 91px;
+border:none ;
+background-color:red;
+border-radius:11px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px
+	
+}
+
+button {
+font-size: 20px;
+
+} 
+
+#uitkomst{
+width: 326px;
+height: 50px;
+font-size: 40px;
+margin-right:40px;
+margin-left:30px;
+}
+#som{
+	font-size:20px;
+	
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;	
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+
+</head>
+
+<body onload="init()">
+<div>
+	<h1>De Rekenmachine!</h1>
+<span id= "som"></span>
+<br>
+
+<td><button class="button" id="CE" onclick="init()">CE</button></td>
+<td> <input id="uitkomst"></input></td>
+</div>
+<div>
+<table id="rekenmachine">
+	<tr>
+		<td><button class="button" id="1" onclick="cijfer(1)">1</button></td>
+		<td><button class="button" id="2" onclick="cijfer(2)">2</button></td>
+		<td><button class="button" id="3" onclick="cijfer(3)">3</button></td>
+		<td><button class="button"  id="plus" onclick="teken('+')">+</button></td>
+		<td><button class="button" id="eenGedeeldDoor" onclick="teken('1/x')">1/x</button></td>
+		<td><button class="button" id="10^x" onclick="teken('10^x')">10^x</button></td> 
+	
+
+	</tr>
+	<tr>
+		<td><button class="button" id="4" onclick="cijfer(4)">4</button></td>
+		<td><button class="button" id="5" onclick="cijfer(5)">5</button></td>
+		<td><button class="button" id="6" onclick="cijfer(6)">6</button></td>
+		<td><button class="button" id="min" onclick="teken('-')">-</button></td>
+		<td><button class="button" id="kwadraat" onclick="teken('^2')">x2</button></td>
+		<td><button class="button" id="faculteit" onclick="teken('!')">n!</button></td>
+
+	<tr>
+		<td><button class="button" id="7" onclick="cijfer(7)">7</button></td>
+		<td><button class="button" id="8" onclick="cijfer(8)">8</button></td>
+		<td><button class="button" id="9" onclick="cijfer(9)">9</button></td>
+		<td><button class="button" id="keer" onclick="teken('*')">*</button></td>
+		<td><button class="button" id="wortel" onclick="teken('wortel')">&#8730</button></td>
+		
+		<td><button class="button" id="totDeMacht" onclick="teken('x^y')">x^y</button></td>
+		
+
+		</tr>
+	<tr>
+		<td><button class="button" id="punt" onclick="cijfer('.')">,</button></td>
+		<td><button class="button" id="0" onclick="cijfer(0)">0</button></td>
+		<td><button class="button" id="=" onclick="bereken()">=</button></td>
+		<td><button class="button" id="delen" onclick="teken('/')">\</button></td>
+		
+		
+		
+		
+
+	</tr>
+</table>
+</div>
+
+<script>
+var getal1="";
+var getal2="";
+var symbool="";
+var tussenResultaat="";
+
+function init() {
+getal1 = "";
+getal2 = "";
+symbool = "";
+document.getElementById("uitkomst").value = "0";
+document.getElementById("punt").disabled = false;
+document.getElementById("som").innerHTML = "";
+}
+
+function cijfer(getal){
+if (symbool == "") {
+	getal1 += getal;
+	document.getElementById("uitkomst").value = getal1;
+} else {
+	getal2 += getal;
+document.getElementById("uitkomst").value += getal;
+}
+if (getal==".") {
+	document.getElementById("punt").disabled = true;
+}
+}
+
+function teken(waarde) {
+symbool = waarde;
+switch (waarde) {
+case "1/x" :
+	document.getElementById("uitkomst").value = "1/" + getal1;
+	break;
+case "x^y":
+	document.getElementById("uitkomst").value += "^";
+	break;
+case "n!":
+	document.getElementById("uitkomst").value += "!";
+	break;
+
+case "x2": 
+	document.getElementById("uitkomst").value += "^2";
+	break;
+case "10^x":
+	document.getElementById("uitkomst").value = "10^" + getal1;
+	break;
+case "wortel":
+	document.getElementById("uitkomst").value = "wortel(" + getal1 + ")";
+	break;
+default:
+	document.getElementById("uitkomst").value += waarde;
+	break;
+	}
+document.getElementById("punt").disabled = false;
+}
+
+function bereken() {
+var antwoord;
+if (getal1 === "" ) {
+	getal1 = tussenResultaat;
+}
+
+document.getElementById("som").innerHTML = document.getElementById("uitkomst").value +  "=";
+console.log(symbool);
+console.log("getal1: "+getal1);
+switch (symbool) { 
+case "+" : 
+	antwoord = parseFloat(getal1) + parseFloat(getal2); 
+	break;
+
+case "-" : 
+	antwoord = parseFloat(getal1) - parseFloat(getal2); 
+	break;
+
+case "*" : 
+	antwoord = parseFloat(getal1) * parseFloat(getal2); 
+	break;
+
+case "/" : 
+	antwoord = parseFloat(getal1) / parseFloat(getal2); 
+	break;
+	
+case "!" :
+	antwoord = faculteit();
+	break; 
+case "^2":
+	antwoord = parseFloat(getal1) * parseFloat(getal1);
+	break;
+case "x^y":
+	antwoord = totDeMacht();
+	break;
+case "1/x" :
+	antwoord = (1/parseFloat(getal1));
+	break;
+case "10^x":
+	antwoord = TienTotDeMacht(getal1);
+	break;
+case "wortel":
+	antwoord = Math.sqrt(getal1);
+	break;
+	}
+document.getElementById("uitkomst").value = antwoord;
+tussenResultaat = antwoord;
+getal1 = "";
+getal2 = "";
+symbool = "";
+}
+
+function TienTotDeMacht(getal) {
+var antwoord=1;
+if (getal == "0") {
+	antwoord = 10;
+} else {
+	for (var i = 1;i<=parseInt(getal);i++) {
+		antwoord = antwoord * 10;
+	}
+} 
+return antwoord;
+}
+
+
+function faculteit(){
+var antwoord = 1;
+for (var i=1; i<= parseInt(getal1);i++) {
+	antwoord = antwoord  * i;
+	}
+return antwoord;
+}
+
+function totDeMacht(){
+var antwoord = 1;
+for (var i=1;i<=parseInt(getal2);i++) {
+	antwoord = antwoord * parseFloat(getal1);
+	}
+return antwoord;
+}
+
+</script>
+
+</body>
+
+
+
+</html>

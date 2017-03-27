@@ -1,0 +1,51 @@
+
+<html>
+<head>
+<title>Getal raden</title>
+<script type="text/javascript">
+
+function startraden() {
+mingetal = 0; // Let op, straks gaat dit +1 (dus word 1)
+maxgetal = 998; // Let op, straks gaat dit +1 (dus word 999)
+ 
+verzinsel = Math.random() * (maxgetal-mingetal); // Willekeurig getal bedenken
+afronden = Math.round(verzinsel); // Willekeurige getal afronden
+eindgetal = afronden + 1; // Geen 0 of 1000, door +1 te doen
+ 
+gok = (undefined); // Zegt dat er nog niet gegokt is
+start = raden(); // Start van de functie gokken
+}
+ 
+function raden() {
+if (gok == undefined) // Wanneer er nog niet gegokt is (het het getal dus undefined is)
+{
+gok = window.prompt ("Geef een getal in tussen 1 en 1000 of druk op OK om te stoppen","Ik wil stoppen!"); // Moet er dus een getal worden ingegeven
+begin = raden() // Met dit getal word de functie nu opnieuw uitgevoerd
+}
+else if (gok > eindgetal) // Als geen van boven van toepassing is word gekeken of het getal te hoog is
+{
+gok = window.prompt ("Te hoog! Probeer opnieuw",gok); // Zo ja, dan moet hier opnieuw een getal worden ingegeven
+opnieuw = raden() // En hierna word weer de functie opnieuw uitgevoerd
+}
+else if (gok < eindgetal) // Nu word gekeken of het te laag is
+{
+gok = window.prompt ("Te laag! Probeer opnieuw",gok); // Zo ja, opnieuw getal invoeren
+opnieuw = raden() // En hierna weer opnieuw deze functie uitvoeren
+}
+else if (gok == eindgetal) // Kijken of het het eindgetal is?
+{
+window.alert ("Proficiat, je hebt het getal geraden!"); // Ja, en dus geen vervolg actie meer hierna
+}
+else if (gok == 'Ik wil stoppen!') // Kijken of de gebruiker wil stoppen
+{
+window.alert ("Bedankt voor het spelen!"); // Ja, stop
+}
+}
+-->
+</script>
+</head>
+<body onload="startraden()">
+<a href="#" onclick="startraden()">Opnieuw raden!</a>
+<!-- Dit werkt dus doordat hij opnieuw het eindgetal gaat aanmaken en het gok getal weer op undefined zet. Vervolgens word er weer de raden functie aangeroepen -->
+</body>
+</html>

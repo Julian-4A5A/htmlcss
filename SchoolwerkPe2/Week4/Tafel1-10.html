@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Tafels</title>
+    </head>
+    <body>
+        <input id="getal" type="number"> x 1
+        <button onclick="berekenen()">Let's make something!!</button>
+        <p id="display"></p>
+        
+        
+        <script type="text/javascript">
+            
+            function berekenen(){
+            var getal1 = document.getElementById("getal").value;
+            var text;
+                
+                for (teller = 1; teller < 11; teller++){
+                    text += getal1 + "x" + teller + " = " + parseInt(getal1) * teller + "<br>";
+                    document.getElementById("display").innerHTML = text;
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pe2Wk2a-2</title>
+    </head>
+    <body>
+        <button onclick="toonEen()">Laat mijn favoriete spellen zien</button>
+        <ol>
+            <li id="spelletje1"></li>
+            <li id="spelletje2"></li>
+        </ol>
+        
+        <button onclick="toonTwee()">Laat mijn favoriete games nog een keer zien</button>
+        <ul>
+            <li id="spelletje3"></li>
+            <li id="spelletje4"></li>
+        </ul>
+        
+        <script type="text/javascript">
+            spel1  = "Grand&nbsp;Theft&nbsp;Auto";
+            
+            function toonEen() {
+                var spel2 = "Assasins&nbsp;Creed";
+                document.getElementById("spelletje1").innerHTML = spel1;
+                document.getElementById("spelletje2").innerHTML = spel2;
+            }
+            
+            function toonTwee() {
+            //    var spel2 = "Assasins&nbsp;Creed";
+                document.getElementById("spelletje3").innerHTML = spel1;
+                document.getElementById("spelletje4").innerHTML = spel2;
+            }
+        </script>
+    </body>
+</html>

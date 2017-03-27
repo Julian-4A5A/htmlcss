@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kerstboompje</title>
+</head>
+
+
+<body>
+    Wat willen we in de kerst boom: <br>
+    <select id="E" onchange="KerstTijd()">
+        <option value= "kerstballen">Kerstballetjes</option>
+        <option value= "lampjes">Lampjes</option>
+        <option value= "piek">Piek?</option>
+        <option value= "aantalballen">Aantalballen</option>
+        <option value= "aantalzaken">Totaal Accessoires</option>
+   
+    </select>
+   <div id="K"></div>
+   <input id="A"> <input id="B">
+   <script>
+        var kerstboom = {
+            kerstballen:"Rood",
+            lampjes:212,
+            piek:"Strik is beter",
+            strik:1,
+            aantalballen:43,
+            aantalzaken : function() {
+        return this.lampjes + this.aantalballen + this.strik;
+    }
+
+        };
+    function KerstTijd() {
+     var waarde = document.getElementById("E").value;
+     switch (waarde)
+     {
+        case "kerstballen" :
+             document.getElementById("K").innerHTML = kerstboom.kerstballen;
+             break;
+        case "lampjes" :
+            document.getElementById("K").innerHTML = kerstboom.lampjes;
+            break;
+        case "piek" :
+            document.getElementById("K").innerHTML = kerstboom.piek;
+            break;
+        case "aantalballen" :
+            document.getElementById("K").innerHTML = kerstboom.aantalballen;
+            break;
+        case "aantalzaken" :
+            document.getElementById("K").innerHTML = kerstboom.aantalzaken;
+            break;
+     }
+    }
+    </script>
+</body>
+</html>
